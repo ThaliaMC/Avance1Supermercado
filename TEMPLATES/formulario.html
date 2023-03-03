@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<h1>Formulario de Registro</h1>
+<h1>Registro del Empleado</h1>
 <form class="row g-3">
     <div class="col-md-6">
       <label for="inputEmail4" class="form-label">Email</label>
@@ -16,23 +16,32 @@
       <label for="inputAddress" class="form-label">Address</label>
       <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
     </div>
-    <div class="col-12">
-      <label for="inputAddress2" class="form-label">Address 2</label>
-      <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-    </div>
-    <div class="col-md-6">
-      <label for="inputCity" class="form-label">City</label>
-      <input type="text" class="form-control" id="inputCity">
-    </div>
+    <div class="col-md-">
+        <label for="inputState" class="form-label">Ciudad</label>
+        <select id="inputState" class="form-select">
+          <option selected>LIMA</option>
+          <option selected>AREQUIPA</option>
+          <option selected>JULIACA</option>
+          <option selected>CUSCO</option>
+          <option selected>ICA</option>
+          <option selected>TACNA</option>
+          <option selected>Elegir..</option>
+          <option>...</option>
+        </select>
+      </div>
     <div class="col-md-4">
-      <label for="inputState" class="form-label">State</label>
+      <label for="inputState" class="form-label">Sede</label>
       <select id="inputState" class="form-select">
-        <option selected>Choose...</option>
+        <option selected>Metro la Marina</option>
+        <option selected>Metro Independencia</option>
+        <option selected>Metro Jesus Maria</option>
+        <option selected>Metro Arequipa</option>
+        <option selected>Elegir..</option>
         <option>...</option>
       </select>
     </div>
     <div class="col-md-2">
-      <label for="inputZip" class="form-label">Zip</label>
+      <label for="inputZip" class="form-label">Anexo</label>
       <input type="text" class="form-control" id="inputZip">
     </div>
     <div class="col-12">
@@ -44,7 +53,7 @@
       </div>
     </div>
     <div class="col-12">
-      <button type="submit" class="btn btn-primary">Sign in</button>
+      <button type="submit" class="btn btn-primary">Guardar</button>
     </div>
   </form>
 
