@@ -18,6 +18,7 @@ from django.urls import path
 from Models.Producto.views import FormularioProductoView
 from VIEWS.HomeView import HomeView
 
+
 urlpatterns = [ 
    # path('admin/', admin.site.urls),
    path('',HomeView.home,name='home'),
@@ -27,5 +28,9 @@ urlpatterns = [
    path('formulario/',HomeView.formulario,name = 'formulario'),
    path('registrarProducto/', FormularioProductoView.index, name='registrarProducto'),
    path('guardarProducto/',FormularioProductoView.procesar_formulario,name='guardarProducto'),
-
+   path('listarProductos/',FormularioProductoView.listar_productos,name='listarProductos'),
+   path('editarProductos/<int:id_producto>',FormularioProductoView.edit,name='editarProductos'),
+   path('actualizarProductos/<int:id_producto>',FormularioProductoView.actualizar_producto,name='actualizarProductos'),
+   path('eliminarProductos/<int:id_producto>',FormularioProductoView.delete,name='eliminarProductos'),
+  
 ]

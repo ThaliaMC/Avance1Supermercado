@@ -10,13 +10,13 @@
 
     {% endif %}
 
-    <h1>Registro de Productos</h1>
+    <h1>Actualizacion de Productos</h1>
 
-    <form action="{% url 'guardarProducto' %}" method="POST">
+    <form action="{% url 'actualizarProductos' producto.id %}" method="POST">
         {% csrf_token %}
         {% if mensaje %}
             <div class="alert alert-success" role="alert">
-                Registro del producto Exitoso!
+                Producto Actualizado exitosamente!
              </div>
         {%  endif %}
 

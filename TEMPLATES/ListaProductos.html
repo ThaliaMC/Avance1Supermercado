@@ -1,0 +1,56 @@
+{% extends 'index.html' %}
+
+
+
+{% block content %}
+  <p></p>
+  <h1> Listado de Productos Registrados </h1>
+  <p></p>
+
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+  <!--button type="button" class="btn btn-success col-md-3">Agregar Nuevo</button>-->
+   <a class="btn btn-success col-md-3" href="{% url 'registrarProducto' %} ">Agregar Nuevo</a> 
+  </div>
+  <p></p>
+    {% if mensaje %}
+        <div class="alert alert-success" role="alert">
+                Producto eliminado exitosamente!
+        </div>
+    {%  endif %}
+
+
+  <table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Categoría</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Fecha_Vencimiento</th>
+            <th scope="col">Fecha_entrada</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Eliminar</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for producto in productos %} 
+        <tr>
+           <th scope="row">{{ producto.id }}</th>
+           <td>{{ producto.nombre }}</td>
+           <td>{{ producto.categoria }}</td>
+           <td>{{ producto.stock }}</td>
+           <td>{{ producto.fecha_vencimiento }}</td>
+           <td>{{ producto.fecha_entrada }}</td>
+           <td><a class="btn btn-warning" href="{% url 'editarProductos' producto.id %}">Editar</a></td>
+           <td><a class="btn btn-danger" href="{% url 'eliminarProductos' producto.id %}">Eliminar</a></td>
+         </tr>
+    
+    {% endfor %}    
+    </tbody>
+  </table>
+
+{% endblock %}
+
+
+
+
